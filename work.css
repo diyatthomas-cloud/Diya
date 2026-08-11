@@ -1,0 +1,1292 @@
+/* =========================================
+   WORK PAGE — DIYA THOMAS
+========================================= */
+
+
+/* =========================================
+   PAGE FRAME
+   Keeps navbar/footer fixed and only main scrollable
+========================================= */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+}
+
+
+body {
+    background: var(--cream);
+}
+
+
+main {
+    position: fixed;
+
+    top: 72px;
+    bottom: 55px;
+
+    left: 0;
+    right: 0;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scroll-behavior: smooth;
+    scroll-padding-top: 25px;
+
+    background: var(--cream);
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   WORK HERO
+========================================= */
+
+.work-hero {
+    min-height: calc(100vh - 127px);
+
+    padding: 130px 9vw 120px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(300px, .85fr);
+
+    gap: 80px;
+
+    align-items: center;
+
+    position: relative;
+
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(244, 201, 220, .42),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 12% 75%,
+            rgba(184, 201, 165, .28),
+            transparent 24%
+        ),
+
+        var(--cream);
+}
+
+
+.work-hero-left {
+    max-width: 850px;
+    min-width: 0;
+}
+
+
+.work-hero .section-label {
+    margin-bottom: 25px;
+}
+
+
+.work-hero h1 {
+    font-size: clamp(4rem, 7.2vw, 7.2rem);
+
+    line-height: .92;
+
+    letter-spacing: -.06em;
+
+    font-weight: 500;
+
+    margin: 0;
+}
+
+
+.work-hero h1 em {
+    color: var(--purple);
+
+    font-family: var(--serif);
+
+    font-weight: 400;
+}
+
+
+.work-hero-right {
+    max-width: 470px;
+
+    align-self: end;
+
+    padding-bottom: 70px;
+
+    min-width: 0;
+}
+
+
+.work-hero-right p {
+    color: var(--muted);
+
+    font-size: .92rem;
+
+    line-height: 1.9;
+
+    margin: 0 0 20px;
+}
+
+
+/* =========================================
+   SCROLL BUTTON
+========================================= */
+
+.section-scroll {
+    position: absolute;
+
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: inherit;
+
+    text-decoration: none;
+
+    font-family: var(--mono);
+
+    font-size: .52rem;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+
+    opacity: .62;
+
+    transition: opacity .3s ease;
+}
+
+
+.section-scroll:hover {
+    opacity: 1;
+}
+
+
+.scroll-arrow {
+    font-size: 1.15rem;
+
+    animation: work-scroll-bounce 1.8s ease-in-out infinite;
+}
+
+
+@keyframes work-scroll-bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+
+}
+
+
+/* =========================================
+   SELECTED EXPERIENCE SECTION
+========================================= */
+
+.selected-experience {
+    padding: 150px 8vw 180px;
+
+    background: var(--white);
+
+    position: relative;
+
+    box-sizing: border-box;
+}
+
+
+.experience-section-heading {
+    max-width: 800px;
+
+    margin: 0 auto 95px;
+
+    text-align: center;
+}
+
+
+.experience-section-heading h2 {
+    font-size: clamp(3.2rem, 6vw, 5.7rem);
+
+    line-height: .95;
+
+    letter-spacing: -.055em;
+
+    margin: 22px 0;
+}
+
+
+.experience-section-heading h2 em {
+    color: var(--purple);
+
+    font-family: var(--serif);
+
+    font-weight: 400;
+}
+
+
+.experience-section-heading > p:last-child {
+    max-width: 560px;
+
+    margin: 0 auto;
+
+    color: var(--muted);
+
+    font-size: .8rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   FEATURED EXPERIENCE CARDS
+========================================= */
+
+.experience-feature {
+    width: min(1150px, 100%);
+
+    min-height: 390px;
+
+    margin: 0 auto 50px;
+
+    padding: 60px;
+
+    display: grid;
+
+    grid-template-columns:
+        45px
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    column-gap: 55px;
+
+    align-items: start;
+
+    position: relative;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    transform: none;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+
+.experience-feature:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 25px 60px rgba(45, 35, 55, .10);
+}
+
+
+/* =========================================
+   FEATURED CARD COLOURS
+========================================= */
+
+.experience-purple {
+    background: var(--purple-light);
+}
+
+
+.experience-green {
+    background: var(--matcha-light);
+}
+
+
+.experience-pink {
+    background: var(--pink-light);
+}
+
+
+/* =========================================
+   EXPERIENCE NUMBER
+========================================= */
+
+.experience-number {
+    font-family: var(--mono);
+
+    font-size: .55rem;
+
+    letter-spacing: .1em;
+
+    color: var(--muted);
+
+    padding-top: 6px;
+}
+
+
+/* =========================================
+   LEFT SIDE — ROLE INFORMATION
+========================================= */
+
+.experience-feature-main {
+    min-width: 0;
+
+    padding-top: 0;
+}
+
+
+.experience-category {
+    font-family: var(--mono);
+
+    font-size: .52rem;
+
+    line-height: 1.6;
+
+    letter-spacing: .13em;
+
+    text-transform: uppercase;
+
+    color: var(--purple-dark);
+
+    margin: 0 0 22px;
+}
+
+
+.experience-feature-main h3 {
+    font-family: var(--serif);
+
+    font-size: clamp(2.5rem, 4vw, 4rem);
+
+    font-weight: 400;
+
+    line-height: .95;
+
+    letter-spacing: -.04em;
+
+    margin: 0 0 25px;
+
+    max-width: 100%;
+
+    overflow-wrap: normal;
+
+    word-break: normal;
+
+    hyphens: none;
+}
+
+
+.experience-company {
+    font-size: .85rem;
+
+    line-height: 1.5;
+
+    font-weight: 500;
+
+    margin: 0 0 6px;
+}
+
+
+.experience-date {
+    font-family: var(--mono);
+
+    font-size: .52rem;
+
+    line-height: 1.5;
+
+    letter-spacing: .07em;
+
+    color: var(--muted);
+
+    text-transform: uppercase;
+
+    margin: 15px 0 4px;
+}
+
+
+.experience-location {
+    font-size: .68rem;
+
+    line-height: 1.5;
+
+    color: var(--muted);
+
+    margin: 0;
+}
+
+
+/* =========================================
+   RIGHT SIDE — ROLE INTRODUCTION
+========================================= */
+
+.experience-feature-copy {
+    min-width: 0;
+
+    padding-top: 55px;
+
+    max-width: 500px;
+}
+
+
+.experience-intro {
+    width: 100%;
+
+    max-width: 430px;
+
+    margin: 0 0 35px;
+
+    font-size: .86rem;
+
+    line-height: 1.8;
+
+    color: var(--muted);
+}
+
+
+/* =========================================
+   EXPLORE ROLE
+========================================= */
+
+.experience-more {
+    width: 100%;
+
+    border-top: 1px solid var(--border);
+
+    padding-top: 22px;
+}
+
+
+.experience-more summary {
+    list-style: none;
+
+    cursor: pointer;
+
+    display: inline-block;
+
+    font-family: var(--mono);
+
+    font-size: .54rem;
+
+    letter-spacing: .1em;
+
+    text-transform: uppercase;
+
+    color: var(--purple-dark);
+
+    border-bottom: 1px solid var(--purple-dark);
+
+    padding-bottom: 3px;
+}
+
+
+.experience-more summary::-webkit-details-marker {
+    display: none;
+}
+
+
+.experience-more summary::marker {
+    display: none;
+}
+
+
+.experience-more[open] summary {
+    margin-bottom: 28px;
+}
+
+
+/* =========================================
+   EXPANDED ROLE CONTENT
+========================================= */
+
+.experience-expanded {
+    width: 100%;
+
+    animation: work-details-reveal .4s ease;
+}
+
+
+@keyframes work-details-reveal {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+.experience-expanded h4 {
+    font-family: var(--mono);
+
+    font-size: .54rem;
+
+    letter-spacing: .13em;
+
+    text-transform: uppercase;
+
+    color: var(--purple-dark);
+
+    margin: 0 0 18px;
+}
+
+
+.experience-expanded ul {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0 0 30px;
+}
+
+
+.experience-expanded li {
+    position: relative;
+
+    padding-left: 22px;
+
+    margin-bottom: 11px;
+
+    color: var(--muted);
+
+    font-size: .76rem;
+
+    line-height: 1.7;
+}
+
+
+.experience-expanded li::before {
+    content: "✦";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 1px;
+
+    color: var(--purple);
+
+    font-size: .5rem;
+}
+
+
+/* =========================================
+   SKILL TAGS
+========================================= */
+
+.skill-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+.skill-tags span {
+    padding: 7px 12px;
+
+    border: 1px solid rgba(41, 37, 47, .12);
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, .58);
+
+    font-family: var(--mono);
+
+    font-size: .5rem;
+
+    color: var(--purple-dark);
+
+    transition:
+        transform .25s ease,
+        background .25s ease;
+}
+
+
+.skill-tags span:hover {
+    transform: translateY(-2px);
+
+    background: white;
+}
+
+
+/* =========================================
+   EXPERIENCE ARCHIVE
+========================================= */
+
+.experience-archive {
+    padding: 150px 10vw;
+
+    background: var(--cream);
+
+    box-sizing: border-box;
+}
+
+
+.archive-heading {
+    max-width: 680px;
+
+    margin-bottom: 80px;
+}
+
+
+.archive-heading h2 {
+    font-size: clamp(3rem, 5.5vw, 5rem);
+
+    line-height: .95;
+
+    letter-spacing: -.05em;
+
+    margin: 20px 0 25px;
+}
+
+
+.archive-heading > p:last-child {
+    max-width: 540px;
+
+    color: var(--muted);
+
+    font-size: .82rem;
+
+    line-height: 1.8;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   ARCHIVE LIST
+========================================= */
+
+.archive-list {
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.archive-item {
+    border-bottom: 1px solid var(--border);
+}
+
+
+.archive-item summary {
+    list-style: none;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(130px, 190px)
+        minmax(0, 1fr)
+        minmax(130px, 200px);
+
+    gap: 35px;
+
+    align-items: center;
+
+    padding: 32px 15px;
+
+    cursor: pointer;
+
+    transition:
+        padding .3s ease,
+        background .3s ease;
+}
+
+
+.archive-item summary::-webkit-details-marker {
+    display: none;
+}
+
+
+.archive-item summary::marker {
+    display: none;
+}
+
+
+.archive-item summary:hover {
+    padding-left: 28px;
+
+    padding-right: 28px;
+
+    background: var(--purple-light);
+}
+
+
+.archive-item[open] summary {
+    background: var(--purple-light);
+}
+
+
+/* =========================================
+   ARCHIVE TEXT
+========================================= */
+
+.archive-type {
+    font-family: var(--mono);
+
+    font-size: .52rem;
+
+    line-height: 1.5;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+
+    color: var(--purple-dark);
+}
+
+
+.archive-item h3 {
+    font-family: var(--serif);
+
+    font-size: 1.75rem;
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    margin: 0 0 4px;
+}
+
+
+.archive-item summary p {
+    font-size: .7rem;
+
+    color: var(--muted);
+
+    margin: 0;
+}
+
+
+.archive-date {
+    font-family: var(--mono);
+
+    font-size: .53rem;
+
+    line-height: 1.5;
+
+    letter-spacing: .07em;
+
+    text-transform: uppercase;
+
+    color: var(--muted);
+
+    text-align: right;
+}
+
+
+/* =========================================
+   ARCHIVE EXPANDED
+========================================= */
+
+.archive-expanded {
+    max-width: 760px;
+
+    margin-left: 225px;
+
+    padding:
+        0
+        20px
+        42px;
+
+    animation: work-details-reveal .4s ease;
+}
+
+
+.archive-location {
+    color: var(--muted);
+
+    font-size: .7rem;
+
+    margin: 0 0 22px;
+}
+
+
+.archive-expanded ul {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0 0 28px;
+}
+
+
+.archive-expanded li {
+    position: relative;
+
+    padding-left: 22px;
+
+    margin-bottom: 10px;
+
+    color: var(--muted);
+
+    font-size: .75rem;
+
+    line-height: 1.7;
+}
+
+
+.archive-expanded li::before {
+    content: "✦";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 1px;
+
+    color: var(--purple);
+
+    font-size: .5rem;
+}
+
+
+/* =========================================
+   WORK LESSONS
+========================================= */
+
+.work-lessons {
+    padding: 150px 8vw;
+
+    background: var(--purple);
+
+    color: white;
+
+    box-sizing: border-box;
+}
+
+
+.work-lessons-heading {
+    max-width: 750px;
+
+    margin: 0 auto 85px;
+
+    text-align: center;
+}
+
+
+.work-lessons .section-label {
+    color: var(--pink);
+}
+
+
+.work-lessons-heading h2 {
+    font-size: clamp(3.2rem, 6vw, 5.7rem);
+
+    line-height: .95;
+
+    letter-spacing: -.055em;
+
+    margin: 20px 0 0;
+}
+
+
+.work-lessons-heading h2 em {
+    color: var(--pink);
+
+    font-family: var(--serif);
+
+    font-weight: 400;
+}
+
+
+/* =========================================
+   LESSON GRID
+========================================= */
+
+.lesson-row {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+
+.lesson-card {
+    min-height: 320px;
+
+    padding: 34px;
+
+    border: 1px solid rgba(255, 255, 255, .20);
+
+    box-sizing: border-box;
+
+    position: relative;
+
+    transition:
+        transform .35s ease,
+        background .35s ease;
+}
+
+
+.lesson-card:hover {
+    transform: translateY(-7px);
+
+    background: rgba(255, 255, 255, .07);
+}
+
+
+.lesson-card > span {
+    font-family: var(--mono);
+
+    font-size: .53rem;
+
+    color: var(--pink);
+}
+
+
+.lesson-card h3 {
+    font-family: var(--serif);
+
+    font-size: 1.95rem;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    margin: 70px 0 18px;
+}
+
+
+.lesson-card p {
+    color: rgba(255, 255, 255, .68);
+
+    font-size: .74rem;
+
+    line-height: 1.8;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   WORK CLOSING
+========================================= */
+
+.work-closing {
+    min-height: calc(100vh - 127px);
+
+    padding: 120px 8vw;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(
+            circle at 30% 40%,
+            var(--pink-light),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 75% 70%,
+            var(--matcha-light),
+            transparent 25%
+        ),
+
+        var(--cream);
+}
+
+
+.closing-star {
+    color: var(--purple);
+
+    font-size: 2rem;
+
+    margin-bottom: 20px;
+}
+
+
+.work-closing h2 {
+    font-size: clamp(3.3rem, 6.5vw, 6rem);
+
+    line-height: .93;
+
+    letter-spacing: -.06em;
+
+    margin: 20px 0 35px;
+}
+
+
+.work-closing h2 em {
+    color: var(--purple);
+
+    font-family: var(--serif);
+
+    font-weight: 400;
+}
+
+
+.work-closing > p:not(.section-label) {
+    max-width: 520px;
+
+    color: var(--muted);
+
+    font-size: .83rem;
+
+    line-height: 1.8;
+
+    margin: 0 0 40px;
+}
+
+
+.work-closing > a {
+    font-family: var(--mono);
+
+    font-size: .55rem;
+
+    letter-spacing: .1em;
+
+    text-transform: uppercase;
+
+    border-bottom: 1px solid var(--ink);
+
+    padding-bottom: 4px;
+
+    transition: .3s ease;
+}
+
+
+.work-closing > a:hover {
+    color: var(--purple);
+
+    border-color: var(--purple);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .work-hero {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding-top: 110px;
+    }
+
+
+    .work-hero-right {
+        align-self: auto;
+
+        max-width: 600px;
+
+        padding-bottom: 80px;
+    }
+
+
+    .experience-feature {
+        grid-template-columns:
+            40px
+            minmax(0, 1fr);
+
+        padding: 45px;
+
+        column-gap: 25px;
+    }
+
+
+    .experience-feature-copy {
+        grid-column: 2;
+
+        max-width: 620px;
+
+        padding-top: 30px;
+    }
+
+
+    .experience-intro {
+        max-width: 560px;
+    }
+
+
+    .archive-item summary {
+        grid-template-columns:
+            140px
+            minmax(0, 1fr);
+    }
+
+
+    .archive-date {
+        grid-column: 2;
+
+        text-align: left;
+    }
+
+
+    .archive-expanded {
+        margin-left: 165px;
+    }
+
+
+    .lesson-row {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    main {
+        top: 64px;
+        bottom: 55px;
+    }
+
+
+    .work-hero {
+        min-height: calc(100vh - 119px);
+
+        padding:
+            90px
+            7vw
+            110px;
+    }
+
+
+    .work-hero h1 {
+        font-size: 3.7rem;
+    }
+
+
+    .selected-experience,
+    .experience-archive,
+    .work-lessons {
+        padding-left: 7vw;
+        padding-right: 7vw;
+    }
+
+
+    .experience-feature {
+        grid-template-columns: 1fr;
+
+        padding: 32px;
+
+        min-height: auto;
+    }
+
+
+    .experience-number {
+        margin-bottom: 15px;
+    }
+
+
+    .experience-feature-copy {
+        grid-column: 1;
+
+        padding-top: 25px;
+    }
+
+
+    .experience-feature-main h3 {
+        font-size: 2.7rem;
+    }
+
+
+    .experience-intro {
+        font-size: .84rem;
+    }
+
+
+    .archive-item summary {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+
+        padding:
+            25px
+            5px;
+    }
+
+
+    .archive-date {
+        grid-column: auto;
+
+        text-align: left;
+    }
+
+
+    .archive-expanded {
+        margin-left: 0;
+
+        padding:
+            0
+            5px
+            35px;
+    }
+
+
+    .lesson-row {
+        grid-template-columns: 1fr;
+    }
+
+
+    .lesson-card {
+        min-height: 270px;
+    }
+
+
+    .lesson-card h3 {
+        margin-top: 55px;
+    }
+
+
+    .work-closing {
+        min-height: calc(100vh - 119px);
+
+        padding-left: 7vw;
+        padding-right: 7vw;
+    }
+
+}
